@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		0B842B633E2A35E7A4D93FAA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */; };
 		0C039679E09597108563DC8A /* CombStoreRIBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15937FC701D0FCD782CF773 /* CombStoreRIBTests.swift */; };
+		17D86C38872F8A4CD78A2055 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4B009963A0684A925BA8961 /* Alamofire */; };
 		1AB1E6C5E5A5AAB6079F64EE /* WishGoalsRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D317A03E0B95D3E1182B5AD /* WishGoalsRIB.swift */; };
 		1D8A0C7B5148092B1CAC6027 /* ForagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16395FAB99B320F1D08154DE /* ForagerViewController.swift */; };
 		29D3803E2C3FC0AF055CB220 /* SwarmOnboardingRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78F8300214D81FC64F2CB5 /* SwarmOnboardingRIB.swift */; };
+		378750C7EEAA8CD2FB8E47FE /* ContactWebSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560FD8038537A5C9F4645ABF /* ContactWebSheet.swift */; };
 		3C3554522ECFFC61C3CE8F40 /* CombDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200DB799C919F8F0C0F0C1E /* CombDomain.swift */; };
 		65795F30061056DDFCC8A202 /* NectarClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15416B4021A36B230337407B /* NectarClient.swift */; };
 		6EC0458319EA7144B2ED2CD4 /* AppLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB44FF2F90EA28B84710BC /* AppLaunch.swift */; };
@@ -22,9 +24,11 @@
 		B1595EFC1BAC0DD02585AFC9 /* HiveRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF8AFD4C5443116603435E /* HiveRIB.swift */; };
 		C329B8DC0124110A09E0E81D /* CombMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD8CFDE0532C2B761618 /* CombMathTests.swift */; };
 		C777496575C2FCC2904F0A60 /* HiveRIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 2FDEBDBAC626C6540514EA15 /* HiveRIBs */; };
+		C984F7166F428F3AE5E6AE05 /* ScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604BAF0827F4869F279C0B63 /* ScreenshotTests.swift */; };
 		CCE66821EE0072CBCB2B4D76 /* CombLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6FE3755544DC3FAE04723 /* CombLayers.swift */; };
 		D33487E77A747705CDBAE0AE /* HiveRIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 4C1E327BF75C345A5F679E74 /* HiveRIBs */; };
 		D8FCA52F6C145BAF6D4C9D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63308196D2D319EC68AEFF66 /* Assets.xcassets */; };
+		E518FB3E5FA69887274E1D1B /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2723A2F2C2B6FC24F8F6DA /* APIConfig.swift */; };
 		EBEB40B79A2D7C00EB38C3E0 /* TodayCombRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA96240D5BC6A4D5445E2B23 /* TodayCombRIB.swift */; };
 		F8964A98B363ABBEF8309DDF /* CombHiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096C0F2C8ED976AFBFFDD9F /* CombHiveStore.swift */; };
 		F9C1ABC4FBF2E0D3F9B93E66 /* HiveChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666793869A0B9C24A2DCBCD /* HiveChrome.swift */; };
@@ -40,10 +44,18 @@
 			remoteGlobalIDString = 72A77B9851952D44E8D75709;
 			remoteInfo = MacroHive;
 		};
+		6E1AAF7DE54109799855FE22 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB9EA2F7EB99BC0B7315A3DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72A77B9851952D44E8D75709;
+			remoteInfo = MacroHive;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C78F8300214D81FC64F2CB5 /* SwarmOnboardingRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwarmOnboardingRIB.swift; sourceTree = "<group>"; };
+		0D2723A2F2C2B6FC24F8F6DA /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		15416B4021A36B230337407B /* NectarClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NectarClient.swift; sourceTree = "<group>"; };
 		16395FAB99B320F1D08154DE /* ForagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForagerViewController.swift; sourceTree = "<group>"; };
 		175832994C71B42BC9A68774 /* HarvestHorizonRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestHorizonRIB.swift; sourceTree = "<group>"; };
@@ -52,9 +64,11 @@
 		381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MacroHiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E4D7AB690E639BD3CDB30F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4200DB799C919F8F0C0F0C1E /* CombDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombDomain.swift; sourceTree = "<group>"; };
-		48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5096C0F2C8ED976AFBFFDD9F /* CombHiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombHiveStore.swift; sourceTree = "<group>"; };
+		560FD8038537A5C9F4645ABF /* ContactWebSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactWebSheet.swift; sourceTree = "<group>"; };
 		5CA4534CD7FC26F905E5691E /* MembersRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRIB.swift; sourceTree = "<group>"; };
+		604BAF0827F4869F279C0B63 /* ScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotTests.swift; sourceTree = "<group>"; };
 		63308196D2D319EC68AEFF66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D317A03E0B95D3E1182B5AD /* WishGoalsRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoalsRIB.swift; sourceTree = "<group>"; };
 		80EF8AFD4C5443116603435E /* HiveRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveRIB.swift; sourceTree = "<group>"; };
@@ -63,10 +77,11 @@
 		B15937FC701D0FCD782CF773 /* CombStoreRIBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombStoreRIBTests.swift; sourceTree = "<group>"; };
 		C9143B95F3E1922266B1D093 /* HiveRIBs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HiveRIBs; path = Packages/HiveRIBs; sourceTree = SOURCE_ROOT; };
 		D00E15989633A5AEC0C3B83C /* SQLiteHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteHandle.swift; sourceTree = "<group>"; };
-		E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MacroHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacroHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E666793869A0B9C24A2DCBCD /* HiveChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveChrome.swift; sourceTree = "<group>"; };
 		EA96240D5BC6A4D5445E2B23 /* TodayCombRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCombRIB.swift; sourceTree = "<group>"; };
 		EAB9CD8CFDE0532C2B761618 /* CombMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombMathTests.swift; sourceTree = "<group>"; };
+		F6112672D99B83050BF51285 /* MacroHiveUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MacroHiveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDDB44FF2F90EA28B84710BC /* AppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +99,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D33487E77A747705CDBAE0AE /* HiveRIBs in Frameworks */,
+				17D86C38872F8A4CD78A2055 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +123,7 @@
 			children = (
 				E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */,
 				381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */,
+				F6112672D99B83050BF51285 /* MacroHiveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,13 +131,23 @@
 		17E8450EFCA72938D6A8E207 /* MacroHive */ = {
 			isa = PBXGroup;
 			children = (
+				0D2723A2F2C2B6FC24F8F6DA /* APIConfig.swift */,
 				63308196D2D319EC68AEFF66 /* Assets.xcassets */,
+				560FD8038537A5C9F4645ABF /* ContactWebSheet.swift */,
 				3E4D7AB690E639BD3CDB30F3 /* Info.plist */,
 				48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */,
 				01F7E7DE514A6FDD077F1381 /* RIBs */,
 				A9669243671DE1BEB2B84820 /* Support */,
 			);
 			path = MacroHive;
+			sourceTree = "<group>";
+		};
+		1E9017620BD6341E1BD46290 /* MacroHiveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				604BAF0827F4869F279C0B63 /* ScreenshotTests.swift */,
+			);
+			path = MacroHiveUITests;
 			sourceTree = "<group>";
 		};
 		5F4E1C04A1D26B6DEC6A3762 /* Hive */ = {
@@ -154,6 +181,7 @@
 			children = (
 				17E8450EFCA72938D6A8E207 /* MacroHive */,
 				66BA4B370A78819DC5DF6407 /* MacroHiveTests */,
+				1E9017620BD6341E1BD46290 /* MacroHiveUITests */,
 				F236258A2659C4C3034FA000 /* Packages */,
 				136A58B09F473E5E88F0B24C /* Products */,
 			);
@@ -227,6 +255,7 @@
 			name = MacroHive;
 			packageProductDependencies = (
 				4C1E327BF75C345A5F679E74 /* HiveRIBs */,
+				E4B009963A0684A925BA8961 /* Alamofire */,
 			);
 			productName = MacroHive;
 			productReference = E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */;
@@ -252,6 +281,24 @@
 			productReference = 381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F2827D3816B1948AD8939886 /* MacroHiveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76D0C2A2885E2A62224A2741 /* Build configuration list for PBXNativeTarget "MacroHiveUITests" */;
+			buildPhases = (
+				9353459F9A1EE354A369519D /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				32A4D14540C389EE0F14473E /* PBXTargetDependency */,
+			);
+			name = MacroHiveUITests;
+			packageProductDependencies = (
+			);
+			productName = MacroHiveUITests;
+			productReference = F6112672D99B83050BF51285 /* MacroHiveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -267,6 +314,10 @@
 					851A615152207C2C4E2E39E4 = {
 						ProvisioningStyle = Manual;
 					};
+					F2827D3816B1948AD8939886 = {
+						ProvisioningStyle = Manual;
+						TestTargetID = 72A77B9851952D44E8D75709;
+					};
 				};
 			};
 			buildConfigurationList = E80C34FBB918939B875DF759 /* Build configuration list for PBXProject "MacroHive" */;
@@ -279,6 +330,7 @@
 			mainGroup = 748AB886E4DE088D4E3EBE41;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				3B30A666241164E9FBE836D9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				5E80C1CBDE9D8162ACA64E73 /* XCLocalSwiftPackageReference "Packages/HiveRIBs" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -288,6 +340,7 @@
 			targets = (
 				72A77B9851952D44E8D75709 /* MacroHive */,
 				851A615152207C2C4E2E39E4 /* MacroHiveTests */,
+				F2827D3816B1948AD8939886 /* MacroHiveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -318,11 +371,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E518FB3E5FA69887274E1D1B /* APIConfig.swift in Sources */,
 				6EC0458319EA7144B2ED2CD4 /* AppLaunch.swift in Sources */,
 				3C3554522ECFFC61C3CE8F40 /* CombDomain.swift in Sources */,
 				F8964A98B363ABBEF8309DDF /* CombHiveStore.swift in Sources */,
 				CCE66821EE0072CBCB2B4D76 /* CombLayers.swift in Sources */,
 				95B681F4F4900D80B634DB84 /* CombVisionCatcher.swift in Sources */,
+				378750C7EEAA8CD2FB8E47FE /* ContactWebSheet.swift in Sources */,
 				7F0973BAD157C4FB7BD327C7 /* ForagerRIB.swift in Sources */,
 				1D8A0C7B5148092B1CAC6027 /* ForagerViewController.swift in Sources */,
 				FB52CB5EB6CF3833E25FBE86 /* HarvestHorizonRIB.swift in Sources */,
@@ -338,6 +393,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9353459F9A1EE354A369519D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C984F7166F428F3AE5E6AE05 /* ScreenshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -346,9 +409,34 @@
 			target = 72A77B9851952D44E8D75709 /* MacroHive */;
 			targetProxy = 18C0CEEF000B5C9C8BB96732 /* PBXContainerItemProxy */;
 		};
+		32A4D14540C389EE0F14473E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72A77B9851952D44E8D75709 /* MacroHive */;
+			targetProxy = 6E1AAF7DE54109799855FE22 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0DA6D8150E0AE3E375706AFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroHive;
+			};
+			name = Debug;
+		};
 		1018180FFCB3E4E407FD0D50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -367,7 +455,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroHive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroHive";
 			};
 			name = Debug;
@@ -429,7 +517,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -449,26 +537,24 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MacroHive reads barcodes to add food to the right hive member.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_UIColorName = mhv_background;
 				INFOPLIST_KEY_UILaunchScreen_UIImageName = mhv_Splash;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-				);
+				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive;
 				PRODUCT_NAME = MacroHive;
 				SDKROOT = iphoneos;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -536,7 +622,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -556,28 +642,46 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "MacroHive reads barcodes to add food to the right hive member.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_UIColorName = mhv_background;
 				INFOPLIST_KEY_UILaunchScreen_UIImageName = mhv_Splash;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				OTHER_LDFLAGS = (
-					"-lsqlite3",
-				);
+				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive;
 				PRODUCT_NAME = MacroHive;
 				SDKROOT = iphoneos;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		91AB519438A40AEA498C95B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MacroHive;
+			};
+			name = Release;
 		};
 		99E5033FA44E2465F239806F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -597,7 +701,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroHive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroHive";
 			};
 			name = Release;
@@ -610,6 +714,15 @@
 			buildConfigurations = (
 				4432087E9B3168BE7E718FF5 /* Debug */,
 				26B12556DC48F7EDB7B5F648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		76D0C2A2885E2A62224A2741 /* Build configuration list for PBXNativeTarget "MacroHiveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DA6D8150E0AE3E375706AFE /* Debug */,
+				91AB519438A40AEA498C95B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -641,6 +754,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		3B30A666241164E9FBE836D9 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wrandecima-bit/Alamofire";
+			requirement = {
+				kind = revision;
+				revision = 7fdd403089757be2ce6991b287c7bef612c8bd04;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2FDEBDBAC626C6540514EA15 /* HiveRIBs */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -649,6 +773,11 @@
 		4C1E327BF75C345A5F679E74 /* HiveRIBs */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HiveRIBs;
+		};
+		E4B009963A0684A925BA8961 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B30A666241164E9FBE836D9 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
