@@ -27,14 +27,12 @@ final class RootInteractor: CombInteractor, SwarmOnboardingListener, HiveListene
             do {
                 try await self.dependency.store.bootstrap()
 #if targetEnvironment(simulator)
-                if !self.dependency.prefs.demoSeeded {
-                    let profile = try await self.dependency.store.activeMemberID()
-                    try await self.dependency.store.seedDemoDay(
-                        dayKey: HiveDayKey.make(Date()),
-                        profileID: profile
-                    )
-                    self.dependency.prefs.demoSeeded = true
-                }
+                let profile = try await self.dependency.store.activeMemberID()
+                try await self.dependency.store.seedDemoDay(
+                    dayKey: HiveDayKey.make(Date()),
+                    profileID: profile
+                )
+                self.dependency.prefs.demoSeeded = true
 #endif
             } catch {
                 self.bootstrapFailed = true

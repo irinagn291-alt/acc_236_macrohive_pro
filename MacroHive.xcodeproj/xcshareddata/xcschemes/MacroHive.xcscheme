@@ -35,6 +35,20 @@
                ReferencedContainer = "container:MacroHive.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F2827D3816B1948AD8939886"
+               BuildableName = "MacroHiveUITests.xctest"
+               BlueprintName = "MacroHiveUITests"
+               ReferencedContainer = "container:MacroHive.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -61,6 +75,17 @@
                BlueprintIdentifier = "851A615152207C2C4E2E39E4"
                BuildableName = "MacroHiveTests.xctest"
                BlueprintName = "MacroHiveTests"
+               ReferencedContainer = "container:MacroHive.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F2827D3816B1948AD8939886"
+               BuildableName = "MacroHiveUITests.xctest"
+               BlueprintName = "MacroHiveUITests"
                ReferencedContainer = "container:MacroHive.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -9,7 +9,7 @@ settings:
   base:
     SWIFT_VERSION: "6.2"
     IPHONEOS_DEPLOYMENT_TARGET: "17.0"
-    TARGETED_DEVICE_FAMILY: "1"
+    TARGETED_DEVICE_FAMILY: "1,2"
     SWIFT_STRICT_CONCURRENCY: complete
     CODE_SIGNING_ALLOWED: NO
     CODE_SIGNING_REQUIRED: NO
@@ -17,6 +17,9 @@ settings:
 packages:
   HiveRIBs:
     path: Packages/HiveRIBs
+  Alamofire:
+    url: https://github.com/wrandecima-bit/Alamofire
+    revision: 7fdd403089757be2ce6991b287c7bef612c8bd04
 targets:
   MacroHive:
     type: application
@@ -28,6 +31,7 @@ targets:
     dependencies:
       - package: HiveRIBs
         product: HiveRIBs
+      - package: Alamofire
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.macrohive.hive
@@ -37,14 +41,15 @@ targets:
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UILaunchScreen_UIImageName: mhv_Splash
         INFOPLIST_KEY_UILaunchScreen_UIColorName: mhv_background
-        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
+        INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
         INFOPLIST_KEY_UIUserInterfaceStyle: Light
         INFOPLIST_KEY_NSCameraUsageDescription: MacroHive reads barcodes to add food to the right hive member.
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.healthcare-fitness
         INFOPLIST_KEY_UIStatusBarStyle: UIStatusBarStyleDarkContent
         INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
-        TARGETED_DEVICE_FAMILY: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
         CURRENT_PROJECT_VERSION: 1
         MARKETING_VERSION: "1.0.0"
         SWIFT_STRICT_CONCURRENCY: complete
@@ -86,15 +91,33 @@ targets:
         SWIFT_STRICT_CONCURRENCY: complete
         SWIFT_VERSION: "6.2"
         ENABLE_TESTABILITY: YES
-        TARGETED_DEVICE_FAMILY: "1"
+        TARGETED_DEVICE_FAMILY: "1,2"
         BUNDLE_LOADER: $(TEST_HOST)
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/MacroHive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroHive
+  MacroHiveUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: MacroHiveUITests
+    dependencies:
+      - target: MacroHive
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.macrohive.hive.uitests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGNING_ALLOWED: NO
+        CODE_SIGNING_REQUIRED: NO
+        CODE_SIGN_IDENTITY: ""
+        TEST_TARGET_NAME: MacroHive
+        TARGETED_DEVICE_FAMILY: "1,2"
 schemes:
   MacroHive:
     build:
       targets:
         MacroHive: all
         MacroHiveTests: [test]
+        MacroHiveUITests: [test]
     test:
       targets:
         - MacroHiveTests
+        - MacroHiveUITests

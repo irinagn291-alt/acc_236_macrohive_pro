@@ -131,6 +131,14 @@ enum HiveFormat {
         decimal(value, digits: 1) ?? "0"
     }
 
+    static func day(_ key: Int) -> String {
+        guard let date = HiveDayKey.date(from: key) else { return String(key) }
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: date)
+    }
+
     static func percent(_ value: Double) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .percent
@@ -217,11 +225,30 @@ enum HiveClock {
     }
 }
 
-final class HivePayloadControl: UIControl {
-    var payload: String = ""
+enum HiveHit {
+    static func contains(_ point: CGPoint, in bounds: CGRect, enabled: Bool, hidden: Bool, alpha: CGFloat) -> Bool {
+        guard enabled, !hidden, alpha > 0.01 else { return false }
+        let dx = min(0, (bounds.width - HiveLayout.tap) / 2)
+        let dy = min(0, (bounds.height - HiveLayout.tap) / 2)
+        return bounds.insetBy(dx: dx, dy: dy).contains(point)
+    }
 }
 
-final class HivePayloadButton: UIButton {
+class HiveHitButton: UIButton {
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        HiveHit.contains(point, in: bounds, enabled: isUserInteractionEnabled, hidden: isHidden, alpha: alpha)
+    }
+}
+
+final class HivePayloadControl: UIControl {
+    var payload: String = ""
+
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        HiveHit.contains(point, in: bounds, enabled: isUserInteractionEnabled, hidden: isHidden, alpha: alpha)
+    }
+}
+
+final class HivePayloadButton: HiveHitButton {
     var payload: String = ""
 }
 

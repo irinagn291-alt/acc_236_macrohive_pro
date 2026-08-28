@@ -482,6 +482,9 @@ actor CombHiveStore {
         _ = try insertEntry(profileID: profileID, product: whey, grams: 30, slot: .firstForage, dayKey: dayKey, isEaten: true)
         _ = try insertEntry(profileID: profileID, product: bar, grams: 60, slot: .middayForage, dayKey: dayKey, isEaten: true)
         _ = try insertEntry(profileID: profileID, product: sardine, grams: 90, slot: .eveningForage, dayKey: dayKey, isEaten: true)
+        if try wishes(profileID: profileID).isEmpty {
+            _ = try upsertWish(profileID: profileID, product: CombShelf.comb[1])
+        }
     }
 
     // MARK: - private

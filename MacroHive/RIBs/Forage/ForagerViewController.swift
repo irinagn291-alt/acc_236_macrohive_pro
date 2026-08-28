@@ -21,7 +21,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
     private let scanStatus = UILabel()
     private let manualField = HiveTextField()
     private let samples = UIStackView()
-    private let settingsButton = UIButton(type: .system)
+    private let settingsButton = HiveHitButton(type: .system)
     private let backdrop = UIImageView(image: UIImage(named: "mhv_CardBackdrop"))
     private let thumb = UIImageView()
     private let nameLabel = UILabel()
@@ -33,13 +33,13 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
     private let gramsField = HiveTextField()
     private let liveTotals = UILabel()
     private let missingBanner = UILabel()
-    private let wishButton = UIButton(type: .system)
-    private let assignButton = UIButton(type: .system)
+    private let wishButton = HiveHitButton(type: .system)
+    private let assignButton = HiveHitButton(type: .system)
     private let success = UIImageView(image: UIImage(named: "mhv_SuccessMark"))
     private let slotStack = UIStackView()
     private let eatenSwitch = UISwitch()
     private let datePicker = UIDatePicker()
-    private let confirm = UIButton(type: .system)
+    private let confirm = HiveHitButton(type: .system)
     private let catcher = CombVisionCatcher()
     private let observerBag = HiveObserverBag()
     private var previewLayer: AVCaptureVideoPreviewLayer?
@@ -80,7 +80,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
         pick.addArrangedSubview(searchPick)
         pick.addArrangedSubview(scanPick)
 
-        previewHost.backgroundColor = HivePalette.ink
+        previewHost.backgroundColor = HivePalette.surface
         previewHost.translatesAutoresizingMaskIntoConstraints = false
         previewHost.heightAnchor.constraint(equalToConstant: 220).isActive = true
         overlay.contentMode = .scaleAspectFit
@@ -107,6 +107,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
         settingsButton.titleLabel?.font = HiveType.font(.headline, bold: true)
         settingsButton.setTitleColor(HivePalette.ink, for: .normal)
         settingsButton.backgroundColor = HivePalette.accent
+        settingsButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         settingsButton.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         settingsButton.accessibilityLabel = "Open Settings"
         settingsButton.addTarget(self, action: #selector(openSettings), for: .touchUpInside)
@@ -192,6 +193,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
         confirm.titleLabel?.font = HiveType.font(.headline, bold: true)
         confirm.setTitleColor(HivePalette.ink, for: .normal)
         confirm.backgroundColor = HivePalette.accent
+        confirm.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         confirm.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         confirm.addTarget(self, action: #selector(confirmTapped), for: .touchUpInside)
         let eatenRow = UIStackView(arrangedSubviews: [label("Eaten today"), eatenSwitch])
@@ -374,13 +376,14 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
     private func renderAssign(_ model: ForagerViewModel) {
         slotStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
         for slot in ForageSlot.allCases {
-            let button = UIButton(type: .system)
+            let button = HiveHitButton(type: .system)
             button.setTitle(slot.title, for: .normal)
             button.setImage(UIImage(named: slot.assetName), for: .normal)
             button.tintColor = HivePalette.ink
             button.titleLabel?.font = HiveType.font(.headline)
             button.setTitleColor(HivePalette.ink, for: .normal)
             button.backgroundColor = slot == model.slot ? HivePalette.accent : HivePalette.surface
+            button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             button.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             button.accessibilityLabel = slot.title
             button.tag = slot.rawValue
@@ -404,7 +407,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
         switch state {
         case .ready:
             previewHost.isHidden = false
-            scanStatus.text = message ?? "Hold a barcode inside the comb."
+            scanStatus.text = message ?? "Hold a barcode or QR inside the comb."
             requestCameraIfNeeded()
             catcher.start()
         case .simulator, .missing:
@@ -448,12 +451,13 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
     private func buildSamples() {
         samples.arrangedSubviews.forEach { $0.removeFromSuperview() }
         for product in CombShelf.comb {
-            let button = UIButton(type: .system)
+            let button = HiveHitButton(type: .system)
             button.setTitle("\(product.name) · \(product.barcode)", for: .normal)
             button.titleLabel?.font = HiveType.font(.caption)
             button.titleLabel?.lineBreakMode = .byTruncatingTail
             button.setTitleColor(HivePalette.ink, for: .normal)
             button.backgroundColor = HivePalette.surface
+            button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             button.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             button.accessibilityLabel = "Sample barcode \(product.name)"
             button.accessibilityIdentifier = product.barcode
@@ -474,7 +478,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
     }
 
     private func bigButton(_ title: String) -> UIButton {
-        let button = UIButton(type: .system)
+        let button = HiveHitButton(type: .system)
         button.setTitle(title, for: .normal)
         button.accessibilityLabel = title
         button.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
@@ -495,6 +499,7 @@ final class ForagerViewController: UIViewController, ForagerPresentable, UITextF
         button.backgroundColor = filled ? HivePalette.accent : HivePalette.surface
         button.layer.borderWidth = filled ? 0 : 1
         button.layer.borderColor = HivePalette.muted.cgColor
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
     }
 
     private func label(_ text: String) -> UILabel {

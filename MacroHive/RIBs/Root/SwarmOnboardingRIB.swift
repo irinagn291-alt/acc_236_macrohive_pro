@@ -97,8 +97,8 @@ final class SwarmOnboardingViewController: UIViewController, SwarmOnboardingPres
 
     private let scroll = UIScrollView()
     private let pageControl = UIPageControl()
-    private let skipButton = UIButton(type: .system)
-    private let nextButton = UIButton(type: .system)
+    private let skipButton = HiveHitButton(type: .system)
+    private let nextButton = HiveHitButton(type: .system)
     private let kcalField = HiveTextField()
     private let proteinField = HiveTextField()
     private let carbsField = HiveTextField()
@@ -138,6 +138,8 @@ final class SwarmOnboardingViewController: UIViewController, SwarmOnboardingPres
         buttons.distribution = .fillEqually
         buttons.spacing = HiveLayout.u(1)
         buttons.translatesAutoresizingMaskIntoConstraints = false
+        skipButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+        nextButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         skipButton.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         nextButton.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         errorLabel.translatesAutoresizingMaskIntoConstraints = false

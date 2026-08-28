@@ -140,6 +140,7 @@ final class WishCombViewController: UIViewController, WishCombPresentable {
             assign.titleLabel?.font = HiveType.font(.caption, bold: true)
             assign.setTitleColor(HivePalette.ink, for: .normal)
             assign.backgroundColor = HivePalette.accent
+            assign.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             assign.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             assign.addTarget(self, action: #selector(promote(_:)), for: .touchUpInside)
             let remove = HivePayloadButton(type: .system)
@@ -148,6 +149,7 @@ final class WishCombViewController: UIViewController, WishCombPresentable {
             remove.accessibilityLabel = "Remove \(item.product.name) from wish comb"
             remove.titleLabel?.font = HiveType.font(.caption)
             remove.setTitleColor(HivePalette.ink, for: .normal)
+            remove.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             remove.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             remove.addTarget(self, action: #selector(removeItem(_:)), for: .touchUpInside)
             let row = UIStackView(arrangedSubviews: [thumb, text, assign, remove])
@@ -239,8 +241,9 @@ final class ColonyGoalsInteractor: CombInteractor, ColonyGoalsPresentableListene
     }
 
     func didOpenContact() {
-        guard let url = URL(string: "https://macrohive.pro/contact-us") else { return }
-        UIApplication.shared.open(url)
+        if let host = presenter as? UIViewController {
+            WebContentHost.presentContact(from: host)
+        }
     }
 
     private func refresh() {
@@ -290,7 +293,7 @@ final class ColonyGoalsViewController: UIViewController, ColonyGoalsPresentable,
     private let carbsField = HiveTextField()
     private let fatField = HiveTextField()
     private let status = UILabel()
-    private let save = UIButton(type: .system)
+    private let save = HiveHitButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -313,6 +316,7 @@ final class ColonyGoalsViewController: UIViewController, ColonyGoalsPresentable,
         save.titleLabel?.font = HiveType.font(.headline, bold: true)
         save.setTitleColor(HivePalette.ink, for: .normal)
         save.backgroundColor = HivePalette.accent
+        save.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         save.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         save.accessibilityLabel = "Save targets"
         save.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
@@ -362,13 +366,14 @@ final class ColonyGoalsViewController: UIViewController, ColonyGoalsPresentable,
     func showError(_ message: String) { status.text = message }
 
     private func actionButton(_ title: String) -> UIButton {
-        let button = UIButton(type: .system)
+        let button = HiveHitButton(type: .system)
         button.setTitle(title, for: .normal)
         button.titleLabel?.font = HiveType.font(.body)
         button.setTitleColor(HivePalette.ink, for: .normal)
         button.backgroundColor = HivePalette.surface
         button.layer.borderWidth = 1
         button.layer.borderColor = HivePalette.muted.cgColor
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         button.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         button.accessibilityLabel = title
         return button

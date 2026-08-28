@@ -1,14 +1,13 @@
 import AVFoundation
 import QuartzCore
 import UIKit
-import Vision
 
-/// Live Vision barcode catcher. VNDetectBarcodesRequest runs on each video buffer.
+/// Live AVCaptureMetadataOutput catcher. EAN/UPC and QR, same path as MacroDock / ByteBite.
 /// AVCaptureSession is confined to `sessionQueue`; that is the Sendable guarantee.
-final class CombVisionCatcher: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, @unchecked Sendable {
+final class CombVisionCatcher: NSObject, AVCaptureMetadataOutputObjectsDelegate, @unchecked Sendable {
     private let session = AVCaptureSession()
-    private let sessionQueue = DispatchQueue(label: "mhv.vision.session")
-    private let output = AVCaptureVideoDataOutput()
+    private let sessionQueue = DispatchQueue(label: "mhv.meta.session")
+    private let output = AVCaptureMetadataOutput()
     private var lastPayload = ""
     private var lastStamp: TimeInterval = 0
     private let debounce: TimeInterval = 1.7
@@ -45,6 +44,12 @@ final class CombVisionCatcher: NSObject, AVCaptureVideoDataOutputSampleBufferDel
     }
 
     private func configure() {
+        guard session.inputs.isEmpty else {
+            Task { @MainActor in
+                self.publishPreview()
+            }
+            return
+        }
         session.beginConfiguration()
         session.sessionPreset = .high
         guard let device = AVCaptureDevice.default(for: .video),
@@ -54,10 +59,11 @@ final class CombVisionCatcher: NSObject, AVCaptureVideoDataOutputSampleBufferDel
             return
         }
         session.addInput(input)
-        output.alwaysDiscardsLateVideoFrames = true
-        output.setSampleBufferDelegate(self, queue: sessionQueue)
         if session.canAddOutput(output) {
             session.addOutput(output)
+            output.setMetadataObjectsDelegate(self, queue: sessionQueue)
+            let wanted: [AVMetadataObject.ObjectType] = [.ean8, .ean13, .upce, .qr]
+            output.metadataObjectTypes = wanted.filter { output.availableMetadataObjectTypes.contains($0) }
         }
         session.commitConfiguration()
         Task { @MainActor in
@@ -72,23 +78,15 @@ final class CombVisionCatcher: NSObject, AVCaptureVideoDataOutputSampleBufferDel
         onPreview?(layer)
     }
 
-    func captureOutput(
-        _ output: AVCaptureOutput,
-        didOutput sampleBuffer: CMSampleBuffer,
+    func metadataOutput(
+        _ output: AVCaptureMetadataOutput,
+        didOutput metadataObjects: [AVMetadataObject],
         from connection: AVCaptureConnection
     ) {
-        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
-        let request = VNDetectBarcodesRequest()
-        request.symbologies = [.ean8, .ean13, .upce, .qr]
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer, orientation: .right, options: [:])
-        do {
-            try handler.perform([request])
-        } catch {
-            return
-        }
-        guard let payload = request.results?
-            .compactMap(\.payloadStringValue)
-            .first(where: { !$0.isEmpty }) else { return }
+        guard let first = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+              let payload = first.stringValue,
+              !payload.isEmpty
+        else { return }
         let now = CACurrentMediaTime()
         if payload == lastPayload, now - lastStamp < debounce { return }
         if now - lastStamp < debounce { return }

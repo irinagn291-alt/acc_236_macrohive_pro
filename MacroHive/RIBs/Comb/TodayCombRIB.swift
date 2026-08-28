@@ -173,8 +173,8 @@ final class TodayCombViewController: UIViewController, TodayCombPresentable {
     private let swarm = HoneycombGridView()
     private let slots = UIStackView()
     private let empty = CombEmptyView()
-    private let forage = UIButton(type: .system)
-    private let scan = UIButton(type: .system)
+    private let forage = HiveHitButton(type: .system)
+    private let scan = HiveHitButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +194,7 @@ final class TodayCombViewController: UIViewController, TodayCombPresentable {
             button.titleLabel?.font = HiveType.font(.headline, bold: true)
             button.setTitleColor(HivePalette.ink, for: .normal)
             button.backgroundColor = HivePalette.accent
+            button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             button.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         }
         forage.accessibilityLabel = "Search the combs"
@@ -235,13 +236,14 @@ final class TodayCombViewController: UIViewController, TodayCombPresentable {
     func render(_ model: TodayCombViewModel) {
         memberStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
         for member in model.members {
-            let chip = UIButton(type: .system)
+            let chip = HiveHitButton(type: .system)
             chip.setTitle(member.name, for: .normal)
             chip.titleLabel?.font = HiveType.font(.callout, bold: member.id == model.activeID)
             chip.setTitleColor(HivePalette.ink, for: .normal)
             chip.backgroundColor = member.id == model.activeID ? HivePalette.accent : HivePalette.surface
             chip.layer.borderWidth = 1
             chip.layer.borderColor = HivePalette.ink.cgColor
+            chip.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             chip.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             chip.tag = Int(truncatingIfNeeded: member.id)
             chip.accessibilityLabel = "Hive member \(member.name)"

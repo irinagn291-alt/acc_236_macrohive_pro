@@ -94,7 +94,7 @@ final class MacroCombLayer: CALayer {
         let capFont = HiveType.font(.caption, bold: false)
         let capAttrs: [NSAttributedString.Key: Any] = [
             .font: capFont,
-            .foregroundColor: HivePalette.muted
+            .foregroundColor: HivePalette.ink.withAlphaComponent(0.78)
         ]
         let capSize = cap.size(withAttributes: capAttrs)
         cap.draw(
@@ -135,7 +135,7 @@ final class ProgressCombLayer: CALayer {
         valueLayer.foregroundColor = HivePalette.ink.cgColor
         captionLayer.alignmentMode = .center
         captionLayer.contentsScale = 3
-        captionLayer.foregroundColor = HivePalette.muted.cgColor
+        captionLayer.foregroundColor = HivePalette.ink.withAlphaComponent(0.78).cgColor
         captionLayer.string = caption
         needsDisplayOnBoundsChange = true
     }
@@ -162,7 +162,7 @@ final class ProgressCombLayer: CALayer {
         captionLayer.font = "Charter-Roman" as CFString
         captionLayer.fontSize = HiveType.font(.caption).pointSize
         valueLayer.foregroundColor = HivePalette.ink.cgColor
-        captionLayer.foregroundColor = HivePalette.muted.cgColor
+        captionLayer.foregroundColor = HivePalette.ink.withAlphaComponent(0.78).cgColor
         track.fillColor = HivePalette.surface.cgColor
         track.strokeColor = HivePalette.muted.cgColor
         fill.strokeColor = HivePalette.accent.cgColor
@@ -386,7 +386,7 @@ final class CombEmptyView: UIView {
     let imageView = UIImageView()
     let titleLabel = UILabel()
     let bodyLabel = UILabel()
-    let actionButton = UIButton(type: .system)
+    let actionButton = HiveHitButton(type: .system)
 
     var onAction: (() -> Void)?
 
@@ -405,6 +405,7 @@ final class CombEmptyView: UIView {
         actionButton.titleLabel?.font = HiveType.font(.headline, bold: true)
         actionButton.setTitleColor(HivePalette.ink, for: .normal)
         actionButton.backgroundColor = HivePalette.accent
+        actionButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         actionButton.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         actionButton.addTarget(self, action: #selector(tap), for: .touchUpInside)
         let stack = UIStackView(arrangedSubviews: [imageView, titleLabel, bodyLabel, actionButton])

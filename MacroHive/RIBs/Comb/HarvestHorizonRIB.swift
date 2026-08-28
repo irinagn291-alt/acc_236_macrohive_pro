@@ -126,7 +126,7 @@ final class HarvestLogViewController: UIViewController, HarvestLogPresentable {
     }
 
     func render(dayKey: Int, entries: [NectarEntry]) {
-        dayLabel.text = String(dayKey)
+        dayLabel.text = HiveFormat.day(dayKey)
         list.arrangedSubviews.forEach { $0.removeFromSuperview() }
         empty.isHidden = !entries.isEmpty
         list.isHidden = entries.isEmpty
@@ -181,6 +181,7 @@ final class HarvestLogViewController: UIViewController, HarvestLogPresentable {
         delete.setTitleColor(HivePalette.ink, for: .normal)
         delete.accessibilityLabel = "Remove \(entry.product.name)"
         delete.payload = String(entry.id)
+        delete.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
         delete.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         delete.addTarget(self, action: #selector(confirmDelete(_:)), for: .touchUpInside)
         let row = UIStackView(arrangedSubviews: [text, delete])
@@ -198,10 +199,11 @@ final class HarvestLogViewController: UIViewController, HarvestLogPresentable {
     }
 
     private func navButton(_ label: String, symbol: String) -> UIButton {
-        let button = UIButton(type: .system)
+        let button = HiveHitButton(type: .system)
         let image = UIImage(systemName: symbol)
         button.setImage(image, for: .normal)
         button.tintColor = HivePalette.ink
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.accessibilityLabel = label
         button.widthAnchor.constraint(equalToConstant: HiveLayout.tap).isActive = true
         button.heightAnchor.constraint(equalToConstant: HiveLayout.tap).isActive = true
@@ -341,7 +343,7 @@ final class HorizonPlanViewController: UIViewController, HorizonPlanPresentable 
         for entry in entries {
             if lastDay != entry.dayKey {
                 let header = UILabel()
-                header.text = String(entry.dayKey)
+                header.text = HiveFormat.day(entry.dayKey)
                 header.font = HiveType.font(.headline, bold: true, tabular: true)
                 header.textColor = HivePalette.ink
                 header.adjustsFontForContentSizeCategory = true
@@ -361,6 +363,7 @@ final class HorizonPlanViewController: UIViewController, HorizonPlanPresentable 
             eat.backgroundColor = HivePalette.accent
             eat.payload = String(entry.id)
             eat.accessibilityLabel = "Mark \(entry.product.name) eaten"
+            eat.contentEdgeInsets = UIEdgeInsets(top: 10, left: 12, bottom: 10, right: 12)
             eat.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             eat.addTarget(self, action: #selector(convert(_:)), for: .touchUpInside)
             let row = UIStackView(arrangedSubviews: [name, eat])

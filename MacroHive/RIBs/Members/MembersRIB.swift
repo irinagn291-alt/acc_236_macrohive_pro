@@ -118,11 +118,12 @@ final class MembersViewController: UIViewController, MembersPresentable {
         hero.isAccessibilityElement = false
         hero.heightAnchor.constraint(equalToConstant: 160).isActive = true
         swarmGrid.accessibilityLabel = "Household adherence"
-        let add = UIButton(type: .system)
+        let add = HiveHitButton(type: .system)
         add.setTitle("Add hive member", for: .normal)
         add.titleLabel?.font = HiveType.font(.headline, bold: true)
         add.setTitleColor(HivePalette.ink, for: .normal)
         add.backgroundColor = HivePalette.accent
+        add.contentEdgeInsets = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
         add.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
         add.accessibilityLabel = "Add hive member"
         add.addTarget(self, action: #selector(addMember), for: .touchUpInside)
@@ -178,12 +179,14 @@ final class MembersViewController: UIViewController, MembersPresentable {
             use.payload = payload
             use.accessibilityLabel = "Switch to \(item.member.name)"
             use.isEnabled = item.member.id != activeID
+            use.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             use.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             use.addTarget(self, action: #selector(switchTo(_:)), for: .touchUpInside)
             let rename = HivePayloadButton(type: .system)
             rename.setTitle("Rename", for: .normal)
             rename.payload = payload
             rename.accessibilityLabel = "Rename \(item.member.name)"
+            rename.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             rename.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             rename.addTarget(self, action: #selector(renameMemberTapped(_:)), for: .touchUpInside)
             let delete = HivePayloadButton(type: .system)
@@ -191,6 +194,7 @@ final class MembersViewController: UIViewController, MembersPresentable {
             delete.payload = payload
             delete.accessibilityLabel = "Remove \(item.member.name)"
             delete.isEnabled = swarm.count > 1
+            delete.contentEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
             delete.heightAnchor.constraint(greaterThanOrEqualToConstant: HiveLayout.tap).isActive = true
             delete.addTarget(self, action: #selector(deleteMember(_:)), for: .touchUpInside)
             let row = UIStackView(arrangedSubviews: [text, use, rename, delete])

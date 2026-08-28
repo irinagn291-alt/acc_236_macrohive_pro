@@ -6,7 +6,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        true
+        APIConfig.apply()
+        return true
     }
 
     func application(
@@ -26,7 +27,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         supportedInterfaceOrientationsFor window: UIWindow?
     ) -> UIInterfaceOrientationMask {
-        .portrait
+        UIDevice.current.userInterfaceIdiom == .pad ? .all : [.portrait, .landscapeLeft, .landscapeRight]
     }
 }
 
@@ -45,7 +46,7 @@ final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.tintColor = HivePalette.accent
         let builder = RootBuilder(dependency: .live())
         let router = builder.build()
-        window.rootViewController = router.view
+        window.rootViewController = LaunchGateController { router.view }
         window.makeKeyAndVisible()
         self.window = window
         self.rootRouter = router

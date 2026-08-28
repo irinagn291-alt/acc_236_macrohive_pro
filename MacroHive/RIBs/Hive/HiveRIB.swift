@@ -272,6 +272,10 @@ final class CombSectionHeader: UIControl {
         ])
     }
 
+    override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
+        HiveHit.contains(point, in: bounds, enabled: isUserInteractionEnabled, hidden: isHidden, alpha: alpha)
+    }
+
     required init?(coder: NSCoder) {
         fatalError("storyboard unused") // programmer error: accordion headers are code-only
     }
