@@ -1,0 +1,656 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B842B633E2A35E7A4D93FAA /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */; };
+		0C039679E09597108563DC8A /* CombStoreRIBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15937FC701D0FCD782CF773 /* CombStoreRIBTests.swift */; };
+		1AB1E6C5E5A5AAB6079F64EE /* WishGoalsRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D317A03E0B95D3E1182B5AD /* WishGoalsRIB.swift */; };
+		1D8A0C7B5148092B1CAC6027 /* ForagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16395FAB99B320F1D08154DE /* ForagerViewController.swift */; };
+		29D3803E2C3FC0AF055CB220 /* SwarmOnboardingRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C78F8300214D81FC64F2CB5 /* SwarmOnboardingRIB.swift */; };
+		3C3554522ECFFC61C3CE8F40 /* CombDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4200DB799C919F8F0C0F0C1E /* CombDomain.swift */; };
+		65795F30061056DDFCC8A202 /* NectarClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15416B4021A36B230337407B /* NectarClient.swift */; };
+		6EC0458319EA7144B2ED2CD4 /* AppLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDB44FF2F90EA28B84710BC /* AppLaunch.swift */; };
+		7F0973BAD157C4FB7BD327C7 /* ForagerRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D624E37A5920DB6B788708 /* ForagerRIB.swift */; };
+		8D09CCA45D6F99F8E7FEA135 /* SQLiteHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E15989633A5AEC0C3B83C /* SQLiteHandle.swift */; };
+		95B681F4F4900D80B634DB84 /* CombVisionCatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4E30684386A1036454AEA1 /* CombVisionCatcher.swift */; };
+		99B7399376D511228EC67D17 /* RootRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864ACA147D9420D62E0A36AF /* RootRIB.swift */; };
+		B1595EFC1BAC0DD02585AFC9 /* HiveRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80EF8AFD4C5443116603435E /* HiveRIB.swift */; };
+		C329B8DC0124110A09E0E81D /* CombMathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9CD8CFDE0532C2B761618 /* CombMathTests.swift */; };
+		C777496575C2FCC2904F0A60 /* HiveRIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 2FDEBDBAC626C6540514EA15 /* HiveRIBs */; };
+		CCE66821EE0072CBCB2B4D76 /* CombLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C6FE3755544DC3FAE04723 /* CombLayers.swift */; };
+		D33487E77A747705CDBAE0AE /* HiveRIBs in Frameworks */ = {isa = PBXBuildFile; productRef = 4C1E327BF75C345A5F679E74 /* HiveRIBs */; };
+		D8FCA52F6C145BAF6D4C9D5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63308196D2D319EC68AEFF66 /* Assets.xcassets */; };
+		EBEB40B79A2D7C00EB38C3E0 /* TodayCombRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA96240D5BC6A4D5445E2B23 /* TodayCombRIB.swift */; };
+		F8964A98B363ABBEF8309DDF /* CombHiveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5096C0F2C8ED976AFBFFDD9F /* CombHiveStore.swift */; };
+		F9C1ABC4FBF2E0D3F9B93E66 /* HiveChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E666793869A0B9C24A2DCBCD /* HiveChrome.swift */; };
+		F9D3E554837BD7A747424C72 /* MembersRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA4534CD7FC26F905E5691E /* MembersRIB.swift */; };
+		FB52CB5EB6CF3833E25FBE86 /* HarvestHorizonRIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175832994C71B42BC9A68774 /* HarvestHorizonRIB.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18C0CEEF000B5C9C8BB96732 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB9EA2F7EB99BC0B7315A3DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 72A77B9851952D44E8D75709;
+			remoteInfo = MacroHive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C78F8300214D81FC64F2CB5 /* SwarmOnboardingRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwarmOnboardingRIB.swift; sourceTree = "<group>"; };
+		15416B4021A36B230337407B /* NectarClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NectarClient.swift; sourceTree = "<group>"; };
+		16395FAB99B320F1D08154DE /* ForagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForagerViewController.swift; sourceTree = "<group>"; };
+		175832994C71B42BC9A68774 /* HarvestHorizonRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestHorizonRIB.swift; sourceTree = "<group>"; };
+		23D624E37A5920DB6B788708 /* ForagerRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForagerRIB.swift; sourceTree = "<group>"; };
+		31C6FE3755544DC3FAE04723 /* CombLayers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombLayers.swift; sourceTree = "<group>"; };
+		381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = MacroHiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E4D7AB690E639BD3CDB30F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4200DB799C919F8F0C0F0C1E /* CombDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombDomain.swift; sourceTree = "<group>"; };
+		48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		5096C0F2C8ED976AFBFFDD9F /* CombHiveStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombHiveStore.swift; sourceTree = "<group>"; };
+		5CA4534CD7FC26F905E5691E /* MembersRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersRIB.swift; sourceTree = "<group>"; };
+		63308196D2D319EC68AEFF66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7D317A03E0B95D3E1182B5AD /* WishGoalsRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishGoalsRIB.swift; sourceTree = "<group>"; };
+		80EF8AFD4C5443116603435E /* HiveRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveRIB.swift; sourceTree = "<group>"; };
+		864ACA147D9420D62E0A36AF /* RootRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRIB.swift; sourceTree = "<group>"; };
+		AA4E30684386A1036454AEA1 /* CombVisionCatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombVisionCatcher.swift; sourceTree = "<group>"; };
+		B15937FC701D0FCD782CF773 /* CombStoreRIBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombStoreRIBTests.swift; sourceTree = "<group>"; };
+		C9143B95F3E1922266B1D093 /* HiveRIBs */ = {isa = PBXFileReference; lastKnownFileType = folder; name = HiveRIBs; path = Packages/HiveRIBs; sourceTree = SOURCE_ROOT; };
+		D00E15989633A5AEC0C3B83C /* SQLiteHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteHandle.swift; sourceTree = "<group>"; };
+		E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = MacroHive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E666793869A0B9C24A2DCBCD /* HiveChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiveChrome.swift; sourceTree = "<group>"; };
+		EA96240D5BC6A4D5445E2B23 /* TodayCombRIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCombRIB.swift; sourceTree = "<group>"; };
+		EAB9CD8CFDE0532C2B761618 /* CombMathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombMathTests.swift; sourceTree = "<group>"; };
+		FDDB44FF2F90EA28B84710BC /* AppLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunch.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		277FA52C8094313F498C6D8E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C777496575C2FCC2904F0A60 /* HiveRIBs in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4A93FD39E3B819720A62025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D33487E77A747705CDBAE0AE /* HiveRIBs in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01F7E7DE514A6FDD077F1381 /* RIBs */ = {
+			isa = PBXGroup;
+			children = (
+				EC06B9E2685A8B9022C629F6 /* Comb */,
+				7BC2F1627E56B789D637F4EA /* Forage */,
+				5F4E1C04A1D26B6DEC6A3762 /* Hive */,
+				EB8E6F27283A282D2D2FD9E6 /* Members */,
+				735E697BBF630861BD61ECDC /* Root */,
+			);
+			path = RIBs;
+			sourceTree = "<group>";
+		};
+		136A58B09F473E5E88F0B24C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */,
+				381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		17E8450EFCA72938D6A8E207 /* MacroHive */ = {
+			isa = PBXGroup;
+			children = (
+				63308196D2D319EC68AEFF66 /* Assets.xcassets */,
+				3E4D7AB690E639BD3CDB30F3 /* Info.plist */,
+				48D79E15CF68D6F1379CC428 /* PrivacyInfo.xcprivacy */,
+				01F7E7DE514A6FDD077F1381 /* RIBs */,
+				A9669243671DE1BEB2B84820 /* Support */,
+			);
+			path = MacroHive;
+			sourceTree = "<group>";
+		};
+		5F4E1C04A1D26B6DEC6A3762 /* Hive */ = {
+			isa = PBXGroup;
+			children = (
+				80EF8AFD4C5443116603435E /* HiveRIB.swift */,
+			);
+			path = Hive;
+			sourceTree = "<group>";
+		};
+		66BA4B370A78819DC5DF6407 /* MacroHiveTests */ = {
+			isa = PBXGroup;
+			children = (
+				EAB9CD8CFDE0532C2B761618 /* CombMathTests.swift */,
+				B15937FC701D0FCD782CF773 /* CombStoreRIBTests.swift */,
+			);
+			path = MacroHiveTests;
+			sourceTree = "<group>";
+		};
+		735E697BBF630861BD61ECDC /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				864ACA147D9420D62E0A36AF /* RootRIB.swift */,
+				0C78F8300214D81FC64F2CB5 /* SwarmOnboardingRIB.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		748AB886E4DE088D4E3EBE41 = {
+			isa = PBXGroup;
+			children = (
+				17E8450EFCA72938D6A8E207 /* MacroHive */,
+				66BA4B370A78819DC5DF6407 /* MacroHiveTests */,
+				F236258A2659C4C3034FA000 /* Packages */,
+				136A58B09F473E5E88F0B24C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BC2F1627E56B789D637F4EA /* Forage */ = {
+			isa = PBXGroup;
+			children = (
+				AA4E30684386A1036454AEA1 /* CombVisionCatcher.swift */,
+				23D624E37A5920DB6B788708 /* ForagerRIB.swift */,
+				16395FAB99B320F1D08154DE /* ForagerViewController.swift */,
+			);
+			path = Forage;
+			sourceTree = "<group>";
+		};
+		A9669243671DE1BEB2B84820 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				FDDB44FF2F90EA28B84710BC /* AppLaunch.swift */,
+				4200DB799C919F8F0C0F0C1E /* CombDomain.swift */,
+				5096C0F2C8ED976AFBFFDD9F /* CombHiveStore.swift */,
+				E666793869A0B9C24A2DCBCD /* HiveChrome.swift */,
+				15416B4021A36B230337407B /* NectarClient.swift */,
+				D00E15989633A5AEC0C3B83C /* SQLiteHandle.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		EB8E6F27283A282D2D2FD9E6 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				5CA4534CD7FC26F905E5691E /* MembersRIB.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		EC06B9E2685A8B9022C629F6 /* Comb */ = {
+			isa = PBXGroup;
+			children = (
+				31C6FE3755544DC3FAE04723 /* CombLayers.swift */,
+				175832994C71B42BC9A68774 /* HarvestHorizonRIB.swift */,
+				EA96240D5BC6A4D5445E2B23 /* TodayCombRIB.swift */,
+				7D317A03E0B95D3E1182B5AD /* WishGoalsRIB.swift */,
+			);
+			path = Comb;
+			sourceTree = "<group>";
+		};
+		F236258A2659C4C3034FA000 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				C9143B95F3E1922266B1D093 /* HiveRIBs */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		72A77B9851952D44E8D75709 /* MacroHive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC6A0CC828FAF7393AC71C4 /* Build configuration list for PBXNativeTarget "MacroHive" */;
+			buildPhases = (
+				3DA71524D58A151B2129DAF2 /* Sources */,
+				C0A64C679510388384E06287 /* Resources */,
+				D4A93FD39E3B819720A62025 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MacroHive;
+			packageProductDependencies = (
+				4C1E327BF75C345A5F679E74 /* HiveRIBs */,
+			);
+			productName = MacroHive;
+			productReference = E56E47AD03BDC65D3E5F5E4E /* MacroHive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		851A615152207C2C4E2E39E4 /* MacroHiveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DFF89218AD57FC734392A660 /* Build configuration list for PBXNativeTarget "MacroHiveTests" */;
+			buildPhases = (
+				38592753A0E0863D86A3DF7C /* Sources */,
+				277FA52C8094313F498C6D8E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				02D142BB163896E53B09B5FA /* PBXTargetDependency */,
+			);
+			name = MacroHiveTests;
+			packageProductDependencies = (
+				2FDEBDBAC626C6540514EA15 /* HiveRIBs */,
+			);
+			productName = MacroHiveTests;
+			productReference = 381BE3B5D82894FDB2470CD3 /* MacroHiveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB9EA2F7EB99BC0B7315A3DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					72A77B9851952D44E8D75709 = {
+						ProvisioningStyle = Manual;
+					};
+					851A615152207C2C4E2E39E4 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = E80C34FBB918939B875DF759 /* Build configuration list for PBXProject "MacroHive" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 748AB886E4DE088D4E3EBE41;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5E80C1CBDE9D8162ACA64E73 /* XCLocalSwiftPackageReference "Packages/HiveRIBs" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 136A58B09F473E5E88F0B24C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				72A77B9851952D44E8D75709 /* MacroHive */,
+				851A615152207C2C4E2E39E4 /* MacroHiveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C0A64C679510388384E06287 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8FCA52F6C145BAF6D4C9D5B /* Assets.xcassets in Resources */,
+				0B842B633E2A35E7A4D93FAA /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		38592753A0E0863D86A3DF7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C329B8DC0124110A09E0E81D /* CombMathTests.swift in Sources */,
+				0C039679E09597108563DC8A /* CombStoreRIBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3DA71524D58A151B2129DAF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EC0458319EA7144B2ED2CD4 /* AppLaunch.swift in Sources */,
+				3C3554522ECFFC61C3CE8F40 /* CombDomain.swift in Sources */,
+				F8964A98B363ABBEF8309DDF /* CombHiveStore.swift in Sources */,
+				CCE66821EE0072CBCB2B4D76 /* CombLayers.swift in Sources */,
+				95B681F4F4900D80B634DB84 /* CombVisionCatcher.swift in Sources */,
+				7F0973BAD157C4FB7BD327C7 /* ForagerRIB.swift in Sources */,
+				1D8A0C7B5148092B1CAC6027 /* ForagerViewController.swift in Sources */,
+				FB52CB5EB6CF3833E25FBE86 /* HarvestHorizonRIB.swift in Sources */,
+				F9C1ABC4FBF2E0D3F9B93E66 /* HiveChrome.swift in Sources */,
+				B1595EFC1BAC0DD02585AFC9 /* HiveRIB.swift in Sources */,
+				F9D3E554837BD7A747424C72 /* MembersRIB.swift in Sources */,
+				65795F30061056DDFCC8A202 /* NectarClient.swift in Sources */,
+				99B7399376D511228EC67D17 /* RootRIB.swift in Sources */,
+				8D09CCA45D6F99F8E7FEA135 /* SQLiteHandle.swift in Sources */,
+				29D3803E2C3FC0AF055CB220 /* SwarmOnboardingRIB.swift in Sources */,
+				EBEB40B79A2D7C00EB38C3E0 /* TodayCombRIB.swift in Sources */,
+				1AB1E6C5E5A5AAB6079F64EE /* WishGoalsRIB.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		02D142BB163896E53B09B5FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 72A77B9851952D44E8D75709 /* MacroHive */;
+			targetProxy = 18C0CEEF000B5C9C8BB96732 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1018180FFCB3E4E407FD0D50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive.tests;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroHive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroHive";
+			};
+			name = Debug;
+		};
+		2163F74F58437B54D5A75690 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		26B12556DC48F7EDB7B5F648 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacroHive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacroHive;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "MacroHive reads barcodes to add food to the right hive member.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_UIColorName = mhv_background;
+				INFOPLIST_KEY_UILaunchScreen_UIImageName = mhv_Splash;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive;
+				PRODUCT_NAME = MacroHive;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		43FB87033E2DA4DA0D773A4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_STYLE = Manual;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4432087E9B3168BE7E718FF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MacroHive/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MacroHive;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "MacroHive reads barcodes to add food to the right hive member.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_UIColorName = mhv_background;
+				INFOPLIST_KEY_UILaunchScreen_UIImageName = mhv_Splash;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive;
+				PRODUCT_NAME = MacroHive;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		99E5033FA44E2465F239806F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.macrohive.hive.tests;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MacroHive.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MacroHive";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FC6A0CC828FAF7393AC71C4 /* Build configuration list for PBXNativeTarget "MacroHive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4432087E9B3168BE7E718FF5 /* Debug */,
+				26B12556DC48F7EDB7B5F648 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DFF89218AD57FC734392A660 /* Build configuration list for PBXNativeTarget "MacroHiveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1018180FFCB3E4E407FD0D50 /* Debug */,
+				99E5033FA44E2465F239806F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E80C34FBB918939B875DF759 /* Build configuration list for PBXProject "MacroHive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				43FB87033E2DA4DA0D773A4D /* Debug */,
+				2163F74F58437B54D5A75690 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5E80C1CBDE9D8162ACA64E73 /* XCLocalSwiftPackageReference "Packages/HiveRIBs" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/HiveRIBs;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FDEBDBAC626C6540514EA15 /* HiveRIBs */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HiveRIBs;
+		};
+		4C1E327BF75C345A5F679E74 /* HiveRIBs */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HiveRIBs;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = AB9EA2F7EB99BC0B7315A3DD /* Project object */;
+}

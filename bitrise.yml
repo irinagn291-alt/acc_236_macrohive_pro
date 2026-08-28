@@ -1,0 +1,189 @@
+---
+format_version: "23"
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: ios
+app:
+  envs:
+  - GF_PROJECT_PATH: "MacroHive.xcodeproj"
+    opts:
+      is_expand: false
+  - GF_SCHEME: "MacroHive"
+    opts:
+      is_expand: false
+  - BITRISE_DISTRIBUTION_METHOD: app-store
+    opts:
+      is_expand: false
+workflows:
+  archive_and_export_app:
+    summary: Archive the iOS app and upload the IPA to App Store Connect.
+    description: Clone, install CocoaPods only when a Podfile exists, sign, archive,
+      and send the IPA with Application Loader.
+    steps:
+    - git-clone@8: {}
+    - script@1:
+        title: Git LFS pull
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -euo pipefail
+            if [[ -f .gitattributes ]] && command -v git-lfs >/dev/null 2>&1; then
+              git lfs install
+              git lfs pull
+            fi
+    - script@1:
+        title: CocoaPods install
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -euo pipefail
+            cd "$BITRISE_SOURCE_DIR"
+            if [ ! -f Podfile ]; then
+              echo "No Podfile — skipping CocoaPods"
+              exit 0
+            fi
+            pod install --repo-update
+            if [ -d Il2CppOutputProject ]; then
+              test -f "Pods/Target Support Files/Pods-UnityFramework/Pods-UnityFramework.release.xcconfig"
+            fi
+    - script@1:
+        title: Prepare ASC key (.p8), modern .p12, relax pbxproj signing for App Store archive
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -euo pipefail
+            defaults write com.apple.dt.Xcode IDESkipMacroFingerprintValidation -bool YES || true
+            defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES || true
+            mkdir -p "$HOME/Library/org.swift.swiftpm/security"
+            if [ -f "$BITRISE_SOURCE_DIR/ci_scripts/macros.json" ]; then
+              cp -f "$BITRISE_SOURCE_DIR/ci_scripts/macros.json" "$HOME/Library/org.swift.swiftpm/security/macros.json"
+            fi
+            echo "$ASC_API_KEY_CONTENT" | base64 -d > "$BITRISE_SOURCE_DIR/AuthKey_${ASC_KEY_ID}.p8"
+            ENC_P12="$BITRISE_SOURCE_DIR/gf_import.p12"
+            STEP_P12="$BITRISE_SOURCE_DIR/gf_step.p12"
+            PEM_TMP="$BITRISE_SOURCE_DIR/gf_tmp.pem"
+            echo "$P12_CONTENT_B64" | base64 -d > "$ENC_P12"
+            _to_pem() {
+              openssl pkcs12 "$@" -in "$ENC_P12" -nodes -passin "pass:${P12_PASSWORD}" -out "$PEM_TMP"
+            }
+            if _to_pem 2>/dev/null || _to_pem -legacy; then
+              openssl pkcs12 -export -in "$PEM_TMP" -out "$STEP_P12" -passout "pass:${P12_PASSWORD}"
+              rm -f "$PEM_TMP" "$ENC_P12"
+            else
+              echo "OpenSSL: failed to read .p12 (check P12_PASSWORD and file)" >&2
+              rm -f "$PEM_TMP" "$ENC_P12"
+              exit 1
+            fi
+            find "$BITRISE_SOURCE_DIR" -name project.pbxproj -print0 | while IFS= read -r -d '' PBX; do
+              echo "Relax code signing identity in $PBX"
+              perl -i -pe '
+                s/^(\s*CODE_SIGN_IDENTITY(?:\[[^\]]+\])?\s*=\s*)"Apple Development";/${1}"";/g;
+                s/^(\s*CODE_SIGN_IDENTITY(?:\[[^\]]+\])?\s*=\s*)Apple Development;/${1}"";/g;
+                s/^(\s*CODE_SIGN_IDENTITY(?:\[[^\]]+\])?\s*=\s*)"iPhone Developer";/${1}"";/g;
+                s/^(\s*CODE_SIGNING_ALLOWED\s*=\s*)NO;/${1}YES;/g;
+                s/^(\s*CODE_SIGNING_REQUIRED\s*=\s*)NO;/${1}YES;/g;
+              ' "$PBX"
+            done
+    - manage-ios-code-signing@2:
+        inputs:
+        - apple_service_connection: api-key
+        - distribution_method: app-store
+        - project_path: "MacroHive.xcodeproj"
+        - scheme: "$GF_SCHEME"
+        - register_test_devices: "no"
+        - apple_team_id: "$APPLE_TEAM_ID"
+        - certificate_url_list: file://$BITRISE_SOURCE_DIR/gf_step.p12
+        - passphrase_list: $P12_PASSWORD
+        - api_key_path: "$BITRISE_SOURCE_DIR/AuthKey_${ASC_KEY_ID}.p8"
+        - api_key_id: "$ASC_KEY_ID"
+        - api_key_issuer_id: "$ASC_ISSUER_ID"
+    - xcode-archive@5:
+        inputs:
+        - project_path: "MacroHive.xcodeproj"
+        - scheme: "$GF_SCHEME"
+        - distribution_method: "$BITRISE_DISTRIBUTION_METHOD"
+        - automatic_code_signing: api-key
+        - certificate_url_list: file://$BITRISE_SOURCE_DIR/gf_step.p12
+        - passphrase_list: $P12_PASSWORD
+        - api_key_path: "$BITRISE_SOURCE_DIR/AuthKey_${ASC_KEY_ID}.p8"
+        - api_key_id: "$ASC_KEY_ID"
+        - api_key_issuer_id: "$ASC_ISSUER_ID"
+        - export_development_team: "$APPLE_TEAM_ID"
+        - xcodebuild_options: "-skipMacroValidation -skipPackagePluginValidation"
+        - xcconfig_content: |-
+            COMPILER_INDEX_STORE_ENABLE = NO
+            CODE_SIGNING_ALLOWED = YES
+            CODE_SIGNING_REQUIRED = YES
+            DEVELOPMENT_TEAM = $APPLE_TEAM_ID
+        - cache_level: none
+    - deploy-to-itunesconnect-application-loader@2:
+        inputs:
+        - connection: "off"
+        - ipa_path: "$BITRISE_IPA_PATH"
+        - api_key_path: "file://$BITRISE_SOURCE_DIR/AuthKey_${ASC_KEY_ID}.p8"
+        - api_issuer: "$ASC_ISSUER_ID"
+        - bundle_id: "$APP_BUNDLE_ID"
+    - deploy-to-bitrise-io@2: {}
+  deliver_metadata:
+    summary: Upload App Store metadata and submit for review.
+    description: Reads fastlane/metadata from the repository and sends it to
+      App Store Connect. The binary is uploaded by archive_and_export_app, so
+      this workflow carries only the store listing and the review submission.
+    steps:
+    - git-clone@8: {}
+    - script@1:
+        title: Check metadata is present
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -euo pipefail
+            cd "$BITRISE_SOURCE_DIR"
+
+            if [ ! -d fastlane/metadata ]; then
+              echo "No fastlane/metadata in the repository — run 'gf metadata generate' first." >&2
+              exit 1
+            fi
+
+            echo "Metadata files:"
+            find fastlane/metadata -type f -name '*.txt' | sort
+
+            if [ ! -f fastlane/Deliverfile ]; then
+              echo "No fastlane/Deliverfile — run 'gf delivery install' first." >&2
+              exit 1
+            fi
+
+            # Name is set when the record is created (Pro / Ultra / … if taken).
+            # Posting name.txt makes Apple add a localization and reject a name
+            # that is already on this app or another one.
+            find fastlane/metadata -name name.txt -delete
+            echo "Dropped name.txt so deliver will not post a listing name."
+
+            PHONE="fastlane/metadata/review_information/phone_number.txt"
+            if [ ! -f "$PHONE" ]; then
+              echo "No App Review phone. phone_number.txt is missing — paste an E.164 number and re-run deliver." >&2
+              exit 1
+            fi
+            NUM="$(tr -d '[:space:]' < "$PHONE")"
+            if ! echo "$NUM" | grep -Eq '^\+[0-9]{8,15}$'; then
+              echo "Review phone must be E.164, e.g. +14155551234. Got: ${NUM:-empty}" >&2
+              exit 1
+            fi
+    - script@1:
+        title: fastlane deliver
+        inputs:
+        - content: |
+            #!/bin/bash
+            set -euo pipefail
+            cd "$BITRISE_SOURCE_DIR"
+
+            export APP_BUNDLE_ID ASC_KEY_ID ASC_ISSUER_ID ASC_API_KEY_CONTENT
+
+            if ! command -v fastlane >/dev/null 2>&1; then
+              gem install fastlane --no-document
+            fi
+
+            fastlane deliver --verbose
+    - deploy-to-bitrise-io@2: {}
+meta:
+  bitrise.io:
+    stack: osx-xcode-26.6.x
+    machine_type_id: g2.mac.large

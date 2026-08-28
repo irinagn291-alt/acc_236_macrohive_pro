@@ -1,0 +1,16 @@
+MacroHive is a personal calorie and macro food log for a household that shares a kitchen. Each hive member keeps their own targets, Harvest Log and Wish Comb on this device. There are no accounts.
+
+• Four-page onboarding: One hive, many eaters; Forage by name or code; A comb for each eater; Set the Queen's first targets. Skip writes default energy and macros.
+• Today's Comb shows energy, Protein, Carbs and Fat against targets, member chips, a family adherence honeycomb, and the four slots First Forage, Midday Forage, Evening Forage and Nectar Drop.
+• Search the combs queries Open Food Facts by name. If the network misses or fails, results come from a bundled local hive shelf.
+• Scan a comb reads a barcode with the camera inside the Forage accordion, or use Type a barcode. On a device without a camera, sample codes from the local shelf are offered.
+• Product detail shows energy and macros per 100 g, a Grams field with live portion totals, Save to wish comb, and Assign forage. Missing energy is shown as unknown, not zero.
+• Assign forage picks a slot and Eaten today or a future day up to 14 days. Nectar Drop is eaten-only; a future date remaps it to Midday Forage. Write to the comb stores the entry.
+• Harvest Log lists eaten items by slot with day switching and Remove.
+• Horizon Plan lists planned items for 14 days with Mark eaten.
+• Wish Comb stores products you intend to buy, one row per barcode, with Assign and Remove.
+• Colony Members add, rename, switch or remove local hive members. Each keeps a private comb of targets, harvest and wishes. Switching is instant and local.
+• Hive Goals edits Energy, Protein, Carbs and Fat, re-runs onboarding, resets all hive data, and opens Contact MacroHive.
+• Resolved products are cached on the device for later offline use.
+
+MacroHive is a personal food log, not medical advice. Nutrition data comes from Open Food Facts.

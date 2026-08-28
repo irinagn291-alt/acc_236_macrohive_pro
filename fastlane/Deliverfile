@@ -1,0 +1,35 @@
+# Managed by gambling-factory. Runs on Bitrise, so nothing secret lives in the repo:
+# the App Store Connect key arrives through the build's secrets.
+#
+# App Review contact and notes are read from fastlane/metadata/review_information/.
+# Pricing, availability, age rating and App Privacy are applied separately over the
+# App Store Connect API (`gf storeconfig apply`) — deliver must not touch them, because
+# its pricing calls fail against Apple's current API.
+
+require "base64"
+
+app_identifier ENV.fetch("APP_BUNDLE_ID")
+
+api_key({
+  key_id: ENV.fetch("ASC_KEY_ID"),
+  issuer_id: ENV.fetch("ASC_ISSUER_ID"),
+  key: Base64.decode64(ENV.fetch("ASC_API_KEY_CONTENT")),
+})
+
+submission_information({
+  export_compliance_uses_encryption: false,
+  content_rights_contains_third_party_content: false,
+  add_id_info_uses_idfa: false,
+})
+
+# The binary is uploaded by the archive workflow, so deliver only carries the metadata.
+skip_binary_upload true
+skip_screenshots true
+skip_app_version_update true
+
+submit_for_review true
+automatic_release true
+force true
+
+# API key auth cannot validate in-app purchases in precheck.
+precheck_include_in_app_purchases false

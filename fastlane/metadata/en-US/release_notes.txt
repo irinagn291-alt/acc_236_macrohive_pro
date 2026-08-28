@@ -1,0 +1,7 @@
+Version 1.0 is the first release of MacroHive.
+
+The hive accordion includes Today's Comb, Forage, Harvest Log, Horizon Plan, Wish Comb, Colony Members and Hive Goals.
+
+Onboarding has four pages and can be skipped with default targets, or completed with Set the Queen's first targets.
+
+Search the combs and Scan a comb resolve products from Open Food Facts or the local hive shelf. Entries assign to First Forage, Midday Forage, Evening Forage or Nectar Drop. Horizon Plan looks 14 days ahead. Colony Members keep separate local profiles. All user data stays on the device.

@@ -1,0 +1,13 @@
+The only sensitive permission is the camera. iOS shows the system prompt the first time the reviewer expands Forage, chooses Scan a comb, and camera authorization is not determined. The usage-description string from the build settings is: MacroHive reads barcodes to add food to the right hive member. If access is denied, the scan pane explains the state and offers Open Settings. If access is restricted, the pane says the camera is restricted and to use a typed barcode. There are no photo-library, location, microphone or tracking permission strings.
+
+There is no login, no in-app purchase, no user-generated content, no account deletion flow and no App Tracking Transparency prompt.
+
+MacroHive is a personal calorie and macro food log for a household that shares a kitchen. Local hive members each have their own targets, harvest and wishes. It is not medical advice; nutrition figures come from Open Food Facts and a bundled local hive shelf.
+
+No credentials or demo account are needed. On a cold launch the reviewer sees four onboarding pages titled One hive, many eaters; Forage by name or code; A comb for each eater; and Set the Queen's first targets. Tap Skip, or Continue through to Write targets. The hive accordion then opens with Today's Comb expanded. Tap Search the combs, type at least two characters in Search nectar by name, and select a result; or tap Scan a comb and use Type a barcode (or a sample code if no camera is present). On the product pane set Grams, tap Assign forage, choose a slot and Eaten today, then Write to the comb. Expand Harvest Log, Horizon Plan, Wish Comb, Colony Members and Hive Goals from the accordion headers to reach the remaining features. Colony Members can Add hive member. Hive Goals includes Contact MacroHive, which opens Safari.
+
+The app contacts Open Food Facts at https://world.openfoodfacts.org for name search (cgi/search.pl) and barcode lookup (api/v2/product). When a product has an image URL, that URL is fetched for the thumbnail. Contact MacroHive opens https://macrohive.pro/contact-us in Safari. Hive members, targets, Harvest Log, Horizon Plan, Wish Comb and cached products stay in a local SQLite store on the device. The bundled local hive shelf stays in the app bundle.
+
+Behavior does not differ by region. Number formatting and the decimal separator follow the device locale. Day boundaries use the device calendar and time zone. All users query the same Open Food Facts world endpoints.
+
+No medical-device, food-service or other regulated-industry licence or paperwork applies. The app does not diagnose, treat or prescribe. Hive Goals states that MacroHive is a personal food log, not medical advice, and credits Open Food Facts.
